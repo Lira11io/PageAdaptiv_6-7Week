@@ -1,0 +1,111 @@
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+.main {
+  text-align: center;
+  width: 100%;
+  grid-row: 2/ 3;
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.section {
+  background-color: rgb(189, 207, 138);
+  min-height: 80px;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  display: grid;
+  gap: 1rem;
+  padding: 10px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cub {
+  background-color: rgb(201, 169, 29);
+  min-height: 40px;
+}
+
+.aside {
+  background-color: rgb(51, 216, 79);
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  min-height: 80px;
+}
+
+/* для устройств с шириной области просмотра до 736px */
+@media screen and (max-width: 736px) {
+  .root {
+    background-color: rgb(145, 61, 223);
+    min-width: auto;
+    min-height: auto;
+    grid-template-rows: 15% 1fr;
+  }
+
+  .main {
+    display: block;
+  }
+
+  .footer,
+  .footsec {
+    display: none;
+  }
+}
+
+/* для устройств с шириной области просмотра от 737px до 1023px */
+@media screen and (min-width: 737px) and (max-width: 1023px) {
+  .root {
+    background-color: rgb(145, 61, 223);
+    display: grid;
+    width: 80vw;
+    height: 60vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 15% 1fr;
+  }
+
+  .footer,
+  .footsec {
+    display: none;
+  }
+}
+
+/* для устройств с шириной области просмотра от 1024px */
+@media screen and (min-width: 1024px) {
+  .root {
+    background-color: rgb(145, 61, 223);
+    display: grid;
+    width: 80vw;
+    height: 60vh;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 15% 1fr 25%;
+  }
+
+  .footer {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-content: center;
+    gap: 1rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .footsec {
+    background-color: rgb(180, 224, 215);
+    width: 100%;
+    min-height: 60px;
+    display: grid;
+    align-items: center;
+  }
+}
